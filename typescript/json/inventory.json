@@ -1,0 +1,68 @@
+{
+    "rice": [
+      {
+        "name": "basmati",
+        "price": 100,
+        "available": 100
+      },
+      {
+        "name": "kolam",
+        "price": 70,
+        "available": 100
+      },
+      {
+        "name": "basmati",
+        "price": 100000,
+        "available": 23
+      },
+      {
+        "name": "hydrabadi",
+        "price": 900,
+        "available": 30
+      },
+      {
+        "name": "patiyala",
+        "price": 80,
+        "available": 100
+      }
+    ],
+    "pulses": [
+      {
+        "name": "Pigeon Peas",
+        "price": 60,
+        "available": 100
+      },
+      {
+        "name": "dry beans",
+        "price": 90,
+        "available": 100
+      },
+      {
+        "name": "Cowpeas",
+        "price": 50,
+        "available": 100
+      },
+      {
+        "name": "jawar",
+        "price": 90,
+        "available": 900
+      },
+      {
+        "name": "mung",
+        "price": 80,
+        "available": 90
+      }
+    ],
+    "wheats": [
+      {
+        "name": "emmer",
+        "price": 160,
+        "available": 100
+      },
+      {
+        "name": "common",
+        "price": 40,
+        "available": 100
+      }
+    ]
+  }
