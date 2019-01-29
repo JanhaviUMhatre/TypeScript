@@ -15,6 +15,8 @@ class Deckofcards
        while (d < 36)
        {
         var i:number; 
+        for(var m:number=0;m<=3;m++)
+    {
         for(i=0;i<=8;i++)
         {
             var rand_suits = Math.floor(Math.random() * 3) + 0;  // random numbers between 0 to 3 
@@ -23,27 +25,35 @@ class Deckofcards
             
             var suit_val = suits[rand_suits];
             rank_val = rank_val + "-" + suit_val;
-            //console.log(rank_val);
-            //for(rank_val ! in card_list)
-            //{
+         
                     if(d!=36)
                     {
                         card_list.push(rank_val);
                         
                     }
                   
-                //}
                 
+                  
             }
-            
-            
+        
+        }
             break;
         }
-        
+        // var twod:number[][]=new Array();
+        // for(var n:number = 0;n<4;n++)
+        // {
+            
+        //     console.log("[");
+        //     for(var k:number=0;k<9;k++)
+        //     {
+        //         twod.push(card_list);
+        //         console.log(twod[n][k])
+        //     }
+        //     console.log();
+        //     console.log("]");
+        // }
         console.log(card_list);
-        
-       }
-        
+    }
 
 }
 var object = new Deckofcards();
