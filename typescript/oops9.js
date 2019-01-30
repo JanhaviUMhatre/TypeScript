@@ -14,13 +14,11 @@ var Deckofcards = /** @class */ (function () {
             for (var m = 0; m <= 3; m++) {
                 for (i = 0; i <= 8; i++) {
                     var rand_suits = Math.floor(Math.random() * 3) + 0; // random numbers between 0 to 3 
-                    var rand_rank = Math.floor(Math.random() * 12) + 0; // random numbers between 0 to 3
+                    var rand_rank = Math.floor(Math.random() * 12) + 2; // random numbers between 0 to 3
                     var rank_val = rank[rand_rank];
                     var suit_val = suits[rand_suits];
                     rank_val = rank_val + "-" + suit_val;
-                    //console.log(rank_val);
-                    //for(rank_val ! = card_list)
-                    //for(let rank_val in card_list)
+                    //for(rank_val in card_list)
                     //{
                     if (d != 36) {
                         card_list.push(rank_val);

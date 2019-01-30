@@ -35,15 +35,17 @@ var Operations = /** @class */ (function () {
             number: number,
             city: city,
             state: state };
-        jsonfile.writeFileSync(file, obj, { flag: 'a' });
+        jsonfile.writeFileSync(file, obj);
+        this.save();
     };
     Operations.prototype.edit = function () {
-        console.log("1.firstname /n 2.lastname /n 3.number /n 4.exit: ");
+        console.log("1.firstname  2.lastname  3.number  4.state  5.city  6.exit: ");
         var updatevalue = read.question("");
         switch (updatevalue) {
             case "firstname": {
                 var file_name = read.question("confirm file name-->");
-                var json = require("./" + file_name);
+                var extensionname = '.json';
+                var json = require("./" + file_name + extensionname);
                 var o = JSON.stringify(json);
                 var p = JSON.parse(o);
                 var firstname = read.question("enter new name: ");
@@ -52,22 +54,67 @@ var Operations = /** @class */ (function () {
                 var ob = JSON.stringify(p);
                 var pa = JSON.parse(ob);
                 jsonfile.writeFileSync(file_name, pa);
+                this.save();
                 break;
             }
             case "lastname": {
-                //ob.open();
+                var last_name = read.question("confirm file name-->");
+                var extensionname = '.json';
+                var json = require("./" + last_name + extensionname);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var lastname = read.question("enter new name: ");
+                p["lastname"] = lastname;
+                console.log(p["lastname"]);
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(last_name, pa);
+                this.save();
                 break;
             }
             case "number": {
-                //ob.save();
+                var num = read.question("confirm file name-->");
+                var extensionname = '.json';
+                var json = require("./" + num + extensionname);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var number = read.question("enter new number: ");
+                p["number"] = number;
+                console.log(p["number"]);
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(num, pa);
+                this.save();
                 break;
             }
             case "state": {
-                //ob.save();
+                var statename = read.question("confirm file name-->");
+                var extensionname = '.json';
+                var json = require("./" + statename + extensionname);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var state = read.question("enter new state: ");
+                p["state"] = state;
+                console.log(p["state"]);
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(statename, pa);
+                this.save();
                 break;
             }
             case "city": {
-                //ob.save();
+                var cityname = read.question("confirm file name-->");
+                var extensionname = '.json';
+                var json = require("./" + cityname + extensionname);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var city = read.question("enter new city: ");
+                p["city"] = city;
+                console.log(p["city"]);
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(cityname, pa);
+                this.save();
                 break;
             }
             case "exit": {
@@ -79,9 +126,117 @@ var Operations = /** @class */ (function () {
             }
         }
     };
-    Operations.prototype["delete"] = function () {
+    Operations.prototype.deleteentry = function () {
+        console.log("what you want to delete?");
+        console.log("1.firstname /n 2.lastname /n 3.number /n 4.state /n 5.city /n 6.exit: ");
+        var deletevalue = read.question("");
+        switch (deletevalue) {
+            case "firstname": {
+                var file_name = read.question("confirm file name-->");
+                //var extensionname = '.json'
+                var json = require("./" + file_name);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var name = read.question("enter name-->");
+                if (p['firstname'] == name) {
+                    delete p['firstname'];
+                }
+                else {
+                    console.log("no such name");
+                }
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(file_name, pa);
+                this.save();
+                break;
+            }
+            case "lastname": {
+                var file_name = read.question("confirm file name-->");
+                //var extensionname = '.json'
+                var json = require("./" + file_name);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var name = read.question("enter name-->");
+                if (p['firstname'] == name) {
+                    delete p['lastname'];
+                }
+                else {
+                    console.log("no such name");
+                }
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(file_name, pa);
+                this.save();
+                break;
+            }
+            case "number": {
+                var file_name = read.question("confirm file name-->");
+                //var extensionname = '.json'
+                var json = require("./" + file_name);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var name = read.question("enter name-->");
+                if (p['firstname'] == name) {
+                    delete p['number'];
+                }
+                else {
+                    console.log("no such name");
+                }
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(file_name, pa);
+                this.save();
+                break;
+            }
+            case "state": {
+                var file_name = read.question("confirm file name-->");
+                //var extensionname = '.json'
+                var json = require("./" + file_name);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var name = read.question("enter name-->");
+                if (p['firstname'] == name) {
+                    delete p['state'];
+                }
+                else {
+                    console.log("no such name");
+                }
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(file_name, pa);
+                this.save();
+                break;
+            }
+            case "city": {
+                var file_name = read.question("confirm file name-->");
+                //var extensionname = '.json'
+                var json = require("./" + file_name);
+                var o = JSON.stringify(json);
+                var p = JSON.parse(o);
+                var name = read.question("enter name-->");
+                if (p['firstname'] == name) {
+                    delete p['city'];
+                }
+                else {
+                    console.log("no such name");
+                }
+                var ob = JSON.stringify(p);
+                var pa = JSON.parse(ob);
+                jsonfile.writeFileSync(file_name, pa);
+                this.save();
+                break;
+            }
+            case "exit": {
+                return;
+            }
+            default: {
+                console.log("Invalid choice");
+                break;
+            }
+        }
     };
-    Operations.prototype.sorting = function () {
+    Operations.prototype.save = function () {
+        console.log("data added and stored successfully...........");
     };
     return Operations;
 }());
@@ -94,7 +249,7 @@ var Options = /** @class */ (function (_super) {
         var file = read.question("enter new file name with extension .json-->");
         //var addr = "address";
         var site = {
-            data: 'address'
+            "user": []
         };
         var data = JSON.stringify(site);
         fs.writeFileSync(file, data, { flag: 'a' });
@@ -120,9 +275,8 @@ var Options = /** @class */ (function (_super) {
             console.log("1.add");
             console.log("2.edit");
             console.log("3.delete");
-            console.log("4.SortData");
-            console.log("5.Print");
-            console.log("6.quit");
+            console.log("4.Print");
+            console.log("5.quit");
             var ch_1 = parseInt(read.question("enter choice--"));
             //console.log(ch);\
             switch (ch_1) {
@@ -136,17 +290,13 @@ var Options = /** @class */ (function (_super) {
                     break;
                 }
                 case 3: {
-                    this["delete"]();
+                    this.deleteentry();
                     break;
                 }
                 case 4: {
-                    this.sorting();
-                    break;
-                }
-                case 5: {
                     console.log("Data of----->" + author['firstname']);
                 }
-                case 6: {
+                case 5: {
                     return;
                 }
                 default: {
@@ -154,11 +304,7 @@ var Options = /** @class */ (function (_super) {
                     break;
                 }
             }
-        } while (ch != 7);
-    };
-    Options.prototype.save = function () {
-    };
-    Options.prototype.saveas = function () {
+        } while (ch != 6);
     };
     return Options;
 }(Operations));

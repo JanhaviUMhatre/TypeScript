@@ -16,9 +16,8 @@ class AddressBook
                 console.log("choose option and enter choice number : ");
                 console.log("1.create");
                 console.log("2.open");
-                console.log("3.save");
-                console.log("4.save as");
-                console.log("5.quit");
+         
+                console.log("3.quit");
                 let ch = parseInt(read.question("enter choice--"));
                 //console.log(ch);\
                 switch (ch) {
@@ -31,18 +30,7 @@ class AddressBook
                        ob.open();
                        break;
                     }
-                     
                     case 3: {
-                       ob.save();
-                       break;
-                    }
-                     
-                    case 4: {
-                       ob.saveas();
-                       break;
-                    }
-
-                    case 5: {
                         return
                        
                      }
@@ -54,7 +42,7 @@ class AddressBook
                  }
 
             }
-            while(ch!=6);
+            while(ch!=4);
     }
 }
 var obj = new AddressBook();
